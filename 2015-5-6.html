@@ -5,10 +5,23 @@
 		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
 		<link href="css/fontawesome.css" type="text/css" rel="stylesheet">
 		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="js/zepto.js"></script>
 	</head>
 	<body>
-		
+		<iframe src="http://www.baidu.com" id="Iframe" frameborder="0" scrolling="no" style="border:0px;width:1000px;" onload="autoHeight();">
+			<p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p><p>fdsfdf</p>
+		</iframe>
+		<script type="text/javascript">
+		    function autoHeight(){
+		        var iframe = document.getElementById("Iframe");
+		        if(iframe.Document){//ie自有属性
+		            iframe.style.height = iframe.Document.documentElement.scrollHeight;
+		        }else if(iframe.contentDocument){//ie,firefox,chrome,opera,safari
+		            iframe.height = iframe.contentDocument.body.offsetHeight ;
+		        }
+		    }
+		</script>
 	</body>
 </html>
  
