@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<title>ZeptoJs</title>
+		<meta name="author" content="" />
+		<meta name="copyright" content="" />
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/zepto.js"></script>
+	</head>
+	<body>
+		<!-- <div id="con">
+			<div id="title">title</div>
+			<div id="main">点击title,移动整个框</div>
+		</div> -->
+		<ul>
+			<li>this is one</li>
+			<li>this is two</li>
+			<li>this is three</li>
+			<li>this is four</li>
+		</ul>
+		<p></p>
+		<script>	
+			 $('li').add('p').css('background-color', 'red');
+			 $('li').after('<p>fdasfd</p>')
+			// (function($){
+			//   /*touchstart the title and drag the con moving*/
+			//   // var moveX,moveY,startX,startY;
+			//   // $(document).on("touchstart","#title",function(event){
+			//   //   if($(event.target).attr('id') == 'title'){
+			//   //     var touchPros = event.touches[0];
+			//   //     startX = touchPros.pageX - event.target.parentNode.offsetLeft;
+			//   //     startY = touchPros.pageY - event.target.parentNode.offsetTop;
+			//   //   }
+			//   //   return false;
+			//   // }).on("touchmove","#title",function(event){
+			//   //   if($(event.target).attr('id') == 'title'){
+			//   //     var touchPros = event.touches[0];
+			//   //     moveX = touchPros.pageX - startX;
+			//   //     moveY = touchPros.pageY - startY;
+			//   //     $('#con').css('left',moveX).css('top',moveY);
+			//   //    }
+			//   // });
+			// })(Zepto); 
+		</script>
+	</body>
+</html>
