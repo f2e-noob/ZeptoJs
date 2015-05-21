@@ -21,9 +21,19 @@
 			<li>this is four</li>
 		</ul>
 		<p></p>
-		<script>	
-			 $('li').add('p').css('background-color', 'red');
-			 $('li').after('<p>fdasfd</p>')
+		<h3>$.event 事件处理</h3>
+		<h3>$.proxy 接受一个函数然后返回一个新函数</h3>
+
+		<script>
+			var obj = {name: 'Zepto'},
+		    handler = function(){ console.log("hello from + ", this.name) }
+
+			$(document).on('click', $.proxy(handler, obj){
+
+			});	
+			 
+			 // $('li').add('p').css('background-color', 'red');
+			 // $('li').after('<p>fdasfd</p>')
 			// (function($){
 			//   /*touchstart the title and drag the con moving*/
 			//   // var moveX,moveY,startX,startY;
