@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<title>ZeptoJs</title>
+		<meta name="author" content="" />
+		<meta name="copyright" content="" />
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/zepto.js"></script>
+		<style type="text/css">
+			 .menu-box{
+			 	width: 100px;
+			 	height: auto;
+			 	border:1px solid #ccc;
+			 	font-size:16px;
+			 }
+			 .menu-list {display: none;}
+			 .current{display: block;}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$(".menu > li > a").click(function(){
+					$(this).next().show()
+					.parent().siblings('li').children('a').next().hide();
+					return false;
+				})
+			})
+		</script>
+	</head>
+	<body>
+		 <div class="menu-box">
+		 	<ul class="menu">
+		 		<li>
+		 			<a href="" class="menu-name">衬衣</a>
+		 			<ul class="menu-list">
+		 				<li>衬衣1</li>
+		 				<li>衬衣2</li>
+		 				<li>衬衣3</li>
+		 			</ul>
+		 		</li>
+		 		<li>
+		 			<a href="" class="menu-name">衬衣</a>
+		 			<ul class="menu-list">
+		 				<li>衬衣1</li>
+		 				<li>衬衣2</li>
+		 				<li>衬衣3</li>
+		 			</ul>
+		 		</li>
+		 		<li>
+		 			<a href="" class="menu-name">衬衣</a>
+		 			<ul class="menu-list">
+		 				<li>衬衣1</li>
+		 				<li>衬衣2</li>
+		 				<li>衬衣3</li>
+		 			</ul>
+		 		</li>
+		 	</ul>
+		 </div>
+	</body>
+</html>
