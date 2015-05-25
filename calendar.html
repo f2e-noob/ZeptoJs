@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<title>ZeptoJs</title>
+		<meta name="author" content="" />
+		<meta name="copyright" content="" />
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<style type="text/css">
+			  .box{
+			  	font-size:14px;
+			  	width:700px;
+			  	height: auto;
+			  	margin:0 auto;
+			  }
+			  .tab_name{
+				margin:0;
+				padding:0;
+				background: #108dbb;
+				height: 35px;
+			  }
+			  .tab_name li{
+			  	width:33%;
+			  	height: 35px;
+			  	line-height: 35px;
+			  	color: #fff;
+			  	float: left;
+			  	cursor: pointer;
+			  	text-align: center;
+			  }
+			  .tab_name li:hover{
+			  	background: #15a0d3;
+			  }
+			  .tab_name li.active{
+			  	background: #15a0d3;
+			  }
+			  .tab_cont{
+			  	width:698px;
+			  	height:300px;
+			  	border:1px solid #15a0d3;
+			  	border-top: none;
+			  	display: none;
+			  }
+			  .block{
+			  	display: block;
+			  } 
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$('.tab_name li').each(function(index,event){
+					$(event).click(function(){
+						 $(".tab_cont").eq(index).addClass('block').siblings().removeClass('block');
+					})
+				})
+			}) 
+
+			//逻辑思路
+			// 第一步 tab选项
+			// 第二步 获取获取tab索引值
+			// 第三步 索引值对应的tab内容
+		</script>
+	</head>
+	<body>
+		 <div class="box">
+		 	 <ul class="tab_name">
+		 	 	<li class="active">项目一</li>
+		 	 	<li>项目二</li>
+		 	 	<li>项目三</li>
+		 	 </ul>
+		 	 <div class="tab_box">
+		 	 	 <div class="tab_cont block">
+		 	 	项目一项目一项目一项目一
+			 	 </div>
+			 	 <div class="tab_cont">
+			 	 	项目二项目二项目二项目二
+			 	 </div>
+			 	 <div class="tab_cont">
+			 	 	项目三项目三项目三项目三
+			 	 </div>
+		 	 </div>
+		 </div>
+	</body>
+</html>
