@@ -41,14 +41,23 @@
 		</style>
 		<script type="text/javascript">
 			$(function(){
-				$('.dot_btn a').click(function(){
-					var index =$('.dot_btn a').index(this);
+				$('.dot_btn a').click(function(index,event){
 					// $('.img li').removeClass('active');
 					$(".img li").eq(index).addClass('active').siblings().removeClass('active');
 					$(this).addClass('active').siblings().removeClass('active');
 				})
 			}) 
 			
+		   //方法二
+		   $(function(){
+				$('.dot_btn a').each(function(index,event){
+					$(event).click(function(){
+						$(".img li").eq(index).addClass('active').siblings().removeClass('active');
+						$(event).addClass('active').siblings().removeClass('active');
+					})
+				})
+			}) 
+
 			//逻辑思路
 			// 第一步 点击图标
 			// 第二步 获取图标的索引值

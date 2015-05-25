@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
+		<meta name="format-detection" content="telephone=no" />
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<style>
+			 .calendar_select{
+			 	width:80%;
+			 	height: 70px;
+			 	line-height: 70px;
+			 	color: #fff;
+			 	font-size:18px;
+			 	font-weight: bold;
+			 	background: #78b601;
+			 	padding:0 10%;
+			 }
+			 .last_year, .last_mouth{
+			 	float: left;
+			 	margin-right:30px;
+			 	cursor: pointer;
+			 }
+			 .next_year, .next_mouth{
+			 	float: right;
+			 	margin-left:30px;
+			 	cursor: pointer;
+			 }
+			 .time{
+			 	float: left;
+			 	width: 200px;
+			 	text-align: center;
+			 	margin-left:40%;
+			 }
+			 .data_table{
+			 	width:100%;
+			 	font-size:24px;
+			 	line-height: 50px;
+			 	text-align: center;
+			 	border-collapse:collapse;
+			 }
+			 .data_table thead{
+			 	background: #ececec;
+			 	color:#f95515;
+			 }
+			 .data_table tr td{ 
+				border:1px solid #ececec;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var myDate=new Date();
+				var thisyear = myDate.getFullYear();
+				var thismouth = myDate.getMonth();
+				var thisday = myDate.getDate();
+				
+				//初始化填充当前月的日期
+				function initDate(){
+
+				}
+			}
+
+			// 第一步 需要定义参数 获取当前的日期变量
+			// 第二步 需要把当前的一个月的日期填写到table表格中
+				// 1.获取某年某月的天数 
+				// 2.获取
+			// 第三步 编辑点击事件
+		</script>
+	</head>
+	<body>
+	  <div class="calendar">
+	  	<div class="calendar_select">
+	  		<p class="last_year"> << </p>
+	  		<p class="last_mouth"> < </p>
+	  		<p class="time">2015-12-25</p>
+	  		<p class="next_year"> >> </p>
+	  		<p class="next_mouth"> > </p>
+	  	</div>
+	  	<div class="data">
+	  		<table class="data_table">
+	  			<thead>	
+					<tr>
+		  				<th>日</th>
+		  				<th>一</th>
+		  				<th>二</th>
+		  				<th>三</th>
+		  				<th>四</th>
+		  				<th>五</th>
+		  				<th>六</th>
+		  			</tr>
+	  			</thead>
+	  			<tbody>
+	  				<tr>
+	  					<td>1</td>
+	  					<td>2</td>
+	  					<td>3</td>
+	  					<td>4</td>
+	  					<td>5</td>
+	  					<td>6</td>
+	  					<td>7</td>
+	  				</tr>
+	  				<tr>
+	  					<td>1</td>
+	  					<td>2</td>
+	  					<td>3</td>
+	  					<td>4</td>
+	  					<td>5</td>
+	  					<td>6</td>
+	  					<td>7</td>
+	  				</tr>
+	  				<tr>
+	  					<td>1</td>
+	  					<td>2</td>
+	  					<td>3</td>
+	  					<td>4</td>
+	  					<td>5</td>
+	  					<td>6</td>
+	  					<td>7</td>
+	  				</tr>
+	  				<tr>
+	  					<td>1</td>
+	  					<td>2</td>
+	  					<td>3</td>
+	  					<td>4</td>
+	  					<td>5</td>
+	  					<td>6</td>
+	  					<td>7</td>
+	  				</tr>
+	  			</tbody>
+	  		</table>
+	  	</div>
+	  </div>
+	</body>
+</html>
