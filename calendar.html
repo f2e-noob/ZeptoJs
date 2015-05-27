@@ -246,7 +246,6 @@ text-align:center;color:#0C6;padding:1% 0;
 			        var d = new Date(year, month, 1);
 			        return d.getDay();
 			    }
-			    
 			    function setcalender(days, weekday) {
 			        //往日历中填入日期
 			        var a = 1;
@@ -269,60 +268,8 @@ text-align:center;color:#0C6;padding:1% 0;
 			            }
 			        }
 			    }
-			    function errorreset() {
-			        //日期报错后，数据重置
-			        thisyear = thisyear1;
-			        thismonth = thismonth1;
-			        thisday = thisday1;
-			        selectday = thisday1;
-			        indate = thisday1;
-			        inmonth = thismonth1;
-			        outdate = thisday1 + 1;
-			        outmonth = thismonth1;
-			        initdata();
-			    }
-			    $(".data_table tbody td.usedate").live("click",
-			    function() { 
-			    //点击日期的效果
-			        var thishtml = parseInt(jQuery(this).html());
-			        jQuery(".data_table td").removeClass("tdselect");
-			        jQuery(this).addClass("tdselect");
-			        selectday = thishtml;
-			        if (datetxt == "datetoday") {
-			            jQuery(".datetoday").val(thisyear + "-" + thismonth + "-" + selectday);
-			            indate = selectday;
-			            inmonth = thismonth;
-			        } else {
-			            jQuery(".dateendday").val(thisyear + "-" + thismonth + "-" + selectday);
-			            outdate = selectday;
-			            outmonth = thismonth;
-			            if (outmonth < inmonth) {
-			                alert("日期填写错误");
-			                jQuery(".datetoday").val(thisyear1 + "-" + thismonth1 + "-" + thisday1);
-			                jQuery(".dateendday").val(thisyear1 + "-" + thismonth1 + "-" + (thisday1 + 1));
-			                errorreset();
-			            } else if (outmonth == inmonth) {
-			                if (outdate <= indate) {
-			                    alert("日期填写错误");
-			                    jQuery(".datetoday").val(thisyear1 + "-" + thismonth1 + "-" + thisday1);
-			                    jQuery(".dateendday").val(thisyear1 + "-" + thismonth1 + "-" + (thisday1 + 1));
-			                    errorreset();
-			                }
-			            }
-			        }
-			    });
-			    jQuery(".datetoday").click(function() {
-			        //选择入住日期
-			        datetxt = "datetoday";
-			        jQuery(".datetext").removeClass("inputdate");
-			        jQuery(this).addClass("inputdate");
-			    });
-			    jQuery(".dateendday").click(function() {
-			        //选择退房日期
-			        datetxt = "dateendday";
-			        jQuery(".datetext").removeClass("inputdate");
-			        jQuery(this).addClass("inputdate");
-			    });
+			 
+			  
 			    jQuery(".lastmonth").click(function() {
 			        //上一个月
 			        thismonth--;
@@ -341,13 +288,7 @@ text-align:center;color:#0C6;padding:1% 0;
 			        }
 			        initdata();
 			    });
-			    jQuery(".btsure").click(function() {
-			        //确定日期
-			        var start = new Date($(".datetoday").val());
-			        var end = new Date($(".dateendday").val());
-			        var diff = parseInt((end - start) / (1000 * 3600 * 24));
-			        jQuery(".bookdate").html(inmonth + "月" + indate + "日至" + outmonth + "月" + outdate + "日(" + diff + ")晚")
-			    });
+			      
 			    jQuery(".caltline1").toggle(function() {
 			        jQuery(".caltline2").slideDown(500);
 			        jQuery(".calender").fadeIn(500);

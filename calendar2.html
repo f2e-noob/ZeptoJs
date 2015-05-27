@@ -57,15 +57,84 @@
 				var thisday = myDate.getDate();
 				
 				//初始化填充当前月的日期
-				function initDate(){
+				function initdata() {
+			        //日期初始填充
+			        var tdheight = $(".data_table tbody tr").eq(0).find("td").height();
+			        $(".data_table tbody td").css("height", tdheight);
+			        $(".selectdate").val(thisyear + "年" + thismonth + "月");
+			       
+			        var days = getdaysinonemonth(thisyear, thismonth);
+			        var weekday = getfirstday(thisyear, thismonth);
+			        setcalender(days, weekday);
+			        
+			        markdate(thisyear, thismonth, selectday);
+			        
+			        orderabledate(thisyear, thismonth, thisday);
+			    }
 
-				}
+			    initdata();
+
+				function getdaysinonemonth(year, month) {
+			        //算某个月的总天数
+			        month = parseInt(month, 10);
+			        var d = new Date(year, month, 0);
+			        return d.getDate();
+			    }
+			    
+			    function getfirstday(year, month) {
+			        //算某个月的第一天是星期几
+			        month = month - 1;
+			        var d = new Date(year, month, 1);
+			        return d.getDay();
+			    }
+			    
+			    function setcalender(days, weekday) {
+			        //往日历中填入日期
+			        var a = 1;
+			        for (var j = 0; j < 6; j++) {
+			            for (var i = 0; i < 7; i++) {
+			                if (j == 0 && i < weekday) {
+			                    jQuery(".data_table tbody tr").eq(0).find("td").eq(i).html("");
+			                    jQuery(".data_table tbody tr").eq(0).find("td").eq(i).removeClass("usedate");
+			                } else {
+			                    if (a <= days) {
+			                        jQuery(".data_table tbody tr").eq(j).find("td").eq(i).html(a);
+			                        jQuery(".data_table tbody tr").eq(j).find("td").eq(i).addClass("usedate");
+			                        a++;
+			                    } else {
+			                        jQuery(".data_table tbody tr").eq(j).find("td").eq(i).html("");
+			                        jQuery(".data_table tbody tr").eq(j).find("td").eq(i).removeClass("usedate");
+			                        a = days + 1;
+			                    }
+			                }
+			            }
+			        }
+			    }
+			    jQuery(".lastmonth").click(function() {
+			        //上一个月
+			        thismonth--;
+			        if (thismonth == 0) {
+			            thismonth = 12;
+			            thisyear--;
+			        }
+			        initdata();
+			    });
+			    jQuery(".nextmonth").click(function() {
+			        //上一个月
+			        thismonth++;
+			        if (thismonth == 13) {
+			            thismonth = 1;
+			            thisyear++;
+			        }
+			        initdata();
+			    });
 			}
 
 			// 第一步 需要定义参数 获取当前的日期变量
 			// 第二步 需要把当前的一个月的日期填写到table表格中
-				// 1.获取某年某月的天数 
-				// 2.获取
+				// 1.获取某年某月的总天数 
+				// 2.获取某月的第一天是星期几
+				// 3.最后添加到表格中
 			// 第三步 编辑点击事件
 		</script>
 	</head>
@@ -79,6 +148,7 @@
 	  		<p class="next_mouth"> > </p>
 	  	</div>
 	  	<div class="data">
+	  	<input type="text" class="selectdate" value="2014年2月" readonly=readonly />
 	  		<table class="data_table">
 	  			<thead>	
 					<tr>
